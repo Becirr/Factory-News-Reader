@@ -1,6 +1,6 @@
 package com.factorynewsreader.data.repository
 
-import android.app.Application
+import com.factorynewsreader.App
 import com.factorynewsreader.R
 import com.factorynewsreader.data.api.ApiService
 import com.factorynewsreader.data.api.model.Article
@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Singleton
 class ArticleRepository @Inject constructor(
-    private val application: Application,
+    private val application: App,
     private val apiService: ApiService,
     private val articleDao: ArticleDao,
     private val articleMapper: ArticleMapper
