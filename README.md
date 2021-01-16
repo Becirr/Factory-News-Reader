@@ -3,13 +3,10 @@ Factory News Reader (android mobile app)
 
 Factory News Reader app illustrating Android development best practices with Android Jetpack.
 
-Getting Started
----------------
-
 Screenshots
 -----------
 | [![Screen1](https://raw.githubusercontent.com/Becirr/Factory-News-Reader/master/screenshots/s1.jpg)]() | [![Screen2](https://raw.githubusercontent.com/Becirr/Factory-News-Reader/master/screenshots/s2.jpg)]() |
-|:---:|:---:|:---:|:---:|:---:|
+|:---:|:---:|
 
 Architecture
 --------------
