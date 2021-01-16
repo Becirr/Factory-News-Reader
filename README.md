@@ -16,11 +16,11 @@ Architecture
 
 **Repository module** handle data operations. They provide more generic API so that the rest of the app can access data layer easily.
 
-![Repository patternb](https://raw.githubusercontent.com/Becirr/Factory-News-Reader/master/screenshots/diagram.png "Repository pattern")
+![Repository pattern](https://raw.githubusercontent.com/Becirr/Factory-News-Reader/master/screenshots/diagram.png "Repository pattern")
 
 Libraries
 --------------
-* [Retorift](https://github.com/square/retrofit) Used for API requests
+* [Retrofit](https://github.com/square/retrofit) Used for API requests
 * [Room](https://developer.android.com/topic/libraries/architecture/room) Used for database
 * [Dagger 2](https://github.com/google/dagger) Used for dependency injection
 * [Glide](https://github.com/bumptech/glide) Used for image loading
