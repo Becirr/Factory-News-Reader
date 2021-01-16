@@ -12,12 +12,12 @@ import com.factorynewsreader.databinding.ListItemArticleBinding
 
 class ArticleViewHolder(
     private val binding: ListItemArticleBinding,
-    private val callback: (product: Article) -> Unit
+    private val callback: (product: Article, position: Int) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(data: Article) {
         // Click listener
-        binding.root.setOnClickListener { callback(data) }
+        binding.root.setOnClickListener { callback(data, adapterPosition) }
 
         // Title
         binding.article = data

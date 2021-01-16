@@ -34,8 +34,13 @@ class ArticleFragment :
     }
 
     override fun setupListeners() {
-        articleAdapter.callback = {
-            //findNavController().navigate(ArticleFragmentDirections.actionHeroFragmentToHeroDetailsFragment(it.json()))
+        articleAdapter.callback = { _, position ->
+            findNavController().navigate(
+                ArticleFragmentDirections.actionArticleFragmentToArticleDetailsFragment(
+                    position,
+                    ArrayList(articleAdapter.currentList.toList()).json()
+                )
+            )
         }
     }
 }

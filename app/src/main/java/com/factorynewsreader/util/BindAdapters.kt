@@ -25,6 +25,5 @@ fun bindArticles(
     val adapter = view.adapter
     if (adapter is ArticleAdapter && items != null) {
         adapter.submitList(items)
-        view.post { view.scrollToPosition(0) }
     }
 }

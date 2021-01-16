@@ -10,24 +10,27 @@
         android:label="ArticleFragment"
         android:name="com.factorynewsreader.ui.article.ArticleFragment"
         tools:layout="@layout/fragment_article">
-        <!--
+
         <action
-            android:id="@+id/action_heroFragment_to_heroDetailsFragment"
-            app:destination="@id/heroDetailsFragment"
+            android:id="@+id/action_articleFragment_to_articleDetailsFragment"
+            app:destination="@id/articleDetailsFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />-->
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
-<!--
+
     <fragment
-        android:id="@+id/heroDetailsFragment"
-        android:label="HeroDetailsFragment"
-        android:name="com.heroes.app.ui.hero_details.HeroDetailsFragment"
-        tools:layout="@layout/hero_details_fragment">
+        android:id="@+id/articleDetailsFragment"
+        android:label="ArticleDetailsFragment"
+        android:name="com.factorynewsreader.ui.article_details.ArticleDetailsFragment"
+        tools:layout="@layout/fragment_article_details">
         <argument
-            android:name="hero"
-            app:argType="string" />
+            android:name="position"
+            app:argType="integer" />
+        <argument
+            android:name="articleList"
+            app:argType="string"/>
     </fragment>
--->
+
 </navigation>

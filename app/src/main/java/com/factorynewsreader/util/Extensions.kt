@@ -5,12 +5,14 @@ import android.content.Context
 import android.content.DialogInterface
 import com.factorynewsreader.R
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 /**
  * Helper function to parse model to string & string to Model
  */
 inline fun <reified T : Any> T.json(): String = Gson().toJson(this, T::class.java)
 inline fun <reified T : Any> String.fromJson(): T = Gson().fromJson(this, T::class.java)
+inline fun <reified T : Any> String.fromJsonList(): T = Gson().fromJson(this, object : TypeToken<T>() {}.type)
 
 fun showErrorDialog(context: Context, onDismiss: () -> Unit) {
     val dialog: AlertDialog = AlertDialog.Builder(context, R.style.AlertDialogStyle)

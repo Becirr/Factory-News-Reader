@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.factorynewsreader.data.api.model.Article
 import com.factorynewsreader.databinding.ListItemArticleBinding
+import javax.inject.Inject
 
-class ArticleAdapter : ListAdapter<Article, ArticleViewHolder>(ArticleDiffUtilCallback()) {
+class ArticleAdapter @Inject constructor(): ListAdapter<Article, ArticleViewHolder>(ArticleDiffUtilCallback()) {
 
-    lateinit var callback: (product: Article) -> Unit
+    lateinit var callback: (product: Article, position: Int) -> Unit
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
