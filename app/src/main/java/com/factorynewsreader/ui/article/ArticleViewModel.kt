@@ -6,8 +6,8 @@ import com.factorynewsreader.data.api.model.Article
 import com.factorynewsreader.data.repository.ArticleRepository
 import com.factorynewsreader.ui.base.BaseViewModel
 import com.factorynewsreader.util.showErrorDialog
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
 class ArticleViewModel @Inject constructor(

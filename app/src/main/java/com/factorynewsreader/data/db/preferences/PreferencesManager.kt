@@ -28,7 +28,7 @@ class PreferencesManager @Inject constructor(application: App) : IPreferencesMan
 
     override fun needsUpdateNewArticles(): Boolean {
         val timestamp = sharedPreferences.getLong(PREF_KEY_LAST_UPDATED_ARTICLES_TIMESTAMP, 0L)
-        return timestamp == 0L || ((System.currentTimeMillis() - timestamp) >= 1 * 60 * 1000)
+        return timestamp == 0L || ((System.currentTimeMillis() - timestamp) >= 5 * 60 * 1000)
     }
 
 }

@@ -3,6 +3,7 @@ package com.factorynewsreader.util
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
+import androidx.core.content.ContextCompat
 import com.factorynewsreader.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -30,7 +31,7 @@ fun showErrorDialog(context: Context, onDismiss: () -> Unit) {
     dialog.setCanceledOnTouchOutside(true)
     dialog.setOnShowListener {
         dialog.getButton(AlertDialog.BUTTON_POSITIVE)
-            .setTextColor(context.getColor(R.color.accent_color))
+            .setTextColor(ContextCompat.getColor(context, R.color.accent_color))
     }
     dialog.show()
 }

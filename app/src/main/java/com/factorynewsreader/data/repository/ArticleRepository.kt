@@ -7,7 +7,7 @@ import com.factorynewsreader.data.api.model.Article
 import com.factorynewsreader.data.db.dao.ArticleDao
 import com.factorynewsreader.data.db.preferences.PreferencesManager
 import com.factorynewsreader.data.mapper.ArticleMapper
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -35,7 +35,10 @@ class ArticleRepository @Inject constructor(
      */
     private fun getArticlesFromApi(): Observable<List<Article>> =
         apiService.getArticles(apiKey = application.getString(R.string.api_key))
-            .doOnNext { articleDao.insert(articleMapper.toEntities(it.articles)) }
+            .doOnNext {
+                preferencesManager.setLastUpdatedArticlesTimestamp()
+                articleDao.insert(articleMapper.toEntities(it.articles))
+            }
             .doOnNext { Timber.d("Data loaded from API!") }
             .map { it.articles }
 

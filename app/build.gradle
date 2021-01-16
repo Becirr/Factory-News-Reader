@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id "androidx.navigation.safeargs"
 }
@@ -42,6 +41,7 @@ android {
 
 dependencies {
     // AndroidX
+    implementation deps.androidx.navigationui
     implementation deps.androidx.navigationfragment
     // Theme
     implementation deps.theme.material
@@ -50,11 +50,14 @@ dependencies {
     kapt deps.dagger.compiler
     compileOnly deps.dagger.annotation
     // RX
+    implementation deps.rx.runtime
     implementation deps.rx.android
     // Retrofit
+    implementation deps.retrofit.runtime
     implementation deps.retrofit.converter
     implementation deps.retrofit.adapter
     implementation deps.retrofit.interceptor
+    implementation deps.retrofit.gson
     // Room
     implementation deps.room.runtime
     implementation deps.room.rxJava

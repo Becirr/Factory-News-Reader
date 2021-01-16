@@ -1,7 +1,7 @@
 package com.factorynewsreader.data.api
 
 import com.factorynewsreader.data.api.model.ArticlesResponse
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
 

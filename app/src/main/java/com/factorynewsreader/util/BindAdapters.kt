@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.factorynewsreader.data.api.model.Article
 import com.factorynewsreader.ui.article.data.ArticleAdapter
 
-@BindingAdapter("app:isVisible")
+@BindingAdapter("isVisible")
 fun bindVisibility(
     view: View,
     visible: Boolean
@@ -17,7 +17,7 @@ fun bindVisibility(
     }
 }
 
-@BindingAdapter("app:bindArticles")
+@BindingAdapter("bindArticles")
 fun bindArticles(
     view: RecyclerView,
     items: List<Article>?

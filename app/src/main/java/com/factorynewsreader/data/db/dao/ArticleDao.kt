@@ -7,7 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.factorynewsreader.data.db.entity.ArticleEntity
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 @Dao
 interface ArticleDao {
