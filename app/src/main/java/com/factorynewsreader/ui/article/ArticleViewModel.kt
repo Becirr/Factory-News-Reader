@@ -18,7 +18,7 @@ class ArticleViewModel @Inject constructor(
     val articles = ObservableField<List<Article>>()
 
     fun getArticles(context: Context) {
-        val disposable = articleRepository.getArticles(forceRemote = true)
+        val disposable = articleRepository.getArticles()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { showLoading() }

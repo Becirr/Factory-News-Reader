@@ -5,6 +5,7 @@ import com.factorynewsreader.R
 import com.factorynewsreader.data.api.ApiService
 import com.factorynewsreader.data.api.model.Article
 import com.factorynewsreader.data.db.dao.ArticleDao
+import com.factorynewsreader.data.db.preferences.PreferencesManager
 import com.factorynewsreader.data.mapper.ArticleMapper
 import io.reactivex.Observable
 import timber.log.Timber
@@ -16,18 +17,16 @@ class ArticleRepository @Inject constructor(
     private val application: App,
     private val apiService: ApiService,
     private val articleDao: ArticleDao,
-    private val articleMapper: ArticleMapper
+    private val articleMapper: ArticleMapper,
+    private val preferencesManager: PreferencesManager
 ) {
 
     /**
      * Fetch list of articles
-     * @param forceRemote if true list of articles will be loaded from API
      * @return list of articles
      */
-    fun getArticles(
-        forceRemote: Boolean = false
-    ): Observable<List<Article>> = when {
-        forceRemote -> getArticlesFromApi()
+    fun getArticles(): Observable<List<Article>> = when {
+        preferencesManager.needsUpdateNewArticles() -> getArticlesFromApi()
         else -> getArticlesFromDatabase()
     }
 
